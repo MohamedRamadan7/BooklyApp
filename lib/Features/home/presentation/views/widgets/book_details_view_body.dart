@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'books_action.dart';
 import 'custom_book_details_app_bar.dart';
+import 'similar_bools_listview.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -36,8 +37,20 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 18),
           const BookRated(mainAxisAlignment: MainAxisAlignment.center),
-          const SizedBox(height: 30),
+          const SizedBox(height: 50),
           const BooksAction(),
+          const SizedBox(height: 40),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              'You can also like',
+              style: Style.textStyle14.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          const SemilarBiiksListView()
         ],
       ),
     );
