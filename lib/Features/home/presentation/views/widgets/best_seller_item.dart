@@ -6,8 +6,8 @@ import '../../../../../core/utils/const.dart';
 import '../../../../../core/utils/style.dart';
 import 'book_rate.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class BookItem extends StatelessWidget {
+  const BookItem({
     super.key,
   });
   @override
@@ -34,8 +34,8 @@ class BestSellerItem extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 30.0, vertical: 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -45,8 +45,8 @@ class BestSellerItem extends StatelessWidget {
                         'Harry Potter and the Goblet of Fire',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style:
-                            Style.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                        style: Style.textStyle20
+                            .copyWith(fontFamily: kGtSectraFine),
                       ),
                     ),
                     const SizedBox(height: 5),
@@ -77,4 +77,3 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 }
-
