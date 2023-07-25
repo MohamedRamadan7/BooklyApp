@@ -5,12 +5,12 @@ import 'package:booklyapp/core/utils/const.dart';
 import '../../../../core/utils/functions/save_bookc.dart';
 import '../../domain/entities/book_entity.dart';
 
-abstract class HomeRemoteDataSourse {
+abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFuturedBooks();
   Future<List<BookEntity>> fetchNewestBooks();
 }
 
-class HomeRemoteDataSourceImpl extends HomeRemoteDataSourse {
+class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   final ApiService apiService;
 
   HomeRemoteDataSourceImpl(this.apiService);
@@ -20,7 +20,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSourse {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=computer science');
     List<BookEntity> books = getBooksList(data);
-    saveBoxData(books, kFutureBox);
+    saveBoxData(books, kFeaturedeBox);
     return books;
   }
 
@@ -30,6 +30,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSourse {
         endPoint:
             'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
     List<BookEntity> books = getBooksList(data);
+    saveBoxData(books, kNewestBox);
+
     return books;
   }
 
