@@ -1,21 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookItem extends StatelessWidget {
   const CustomBookItem({
     super.key,
+    required this.image,
   });
+  final String image;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.6 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                  'https://www.dramaticpublishing.com/media/catalog/product/cache/1/image/300x436/9df78eab33525d08d6e5fb8d27136e95/j/u/jungle_book_cover_j24000.jpg',
-                ))),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.0),
+        child: CachedNetworkImage(
+          imageUrl: image,
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

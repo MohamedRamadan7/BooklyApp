@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'best_seller_list_view.dart';
 import 'custom_appbar.dart';
-import 'list_view_books.dart';
+import 'featured_booksList_view_bloc_bilder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
                 child: CustomAppBar(),
               ),
-              FeaturedBooksListView(),
+              FeaturedBooksListViewVBlocBilder(),
               SizedBox(height: 25),
               Text('Best Seller', style: Style.textStyle18),
               SizedBox(height: 10),

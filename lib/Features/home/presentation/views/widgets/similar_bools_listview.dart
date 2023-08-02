@@ -15,7 +15,9 @@ class SemilarBiiksListView extends StatelessWidget {
         itemCount: 5,
         itemBuilder: (context, index) => const Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.0),
-          child: CustomBookItem(),
+          child: CustomBookItem(
+            image: '',
+          ),
         ),
       ),
     );
